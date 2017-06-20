@@ -3,4 +3,8 @@ class StaticPagesController < ApplicationController
   end
   def homepostlogin
   end
+  def aboutpage
+  end
+  def helppage
+  end
 end
