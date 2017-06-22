@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      remember user # defined in sessions helper
       redirect_to user # equivalent to redirect_to user_url(user)
     else
       flash.now[:danger] = 'Invalid email/password combination'
