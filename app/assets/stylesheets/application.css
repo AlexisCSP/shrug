@@ -29,3 +29,8 @@ h2,h3,h4,h5,h6 {
 .container {
 	background: lightgrey;
 }
+
+.shrugimage{
+	height: 100px;
+	width: 50px;
+}

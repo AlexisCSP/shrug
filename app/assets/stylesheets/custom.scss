@@ -41,13 +41,12 @@ input {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 2.2em;
   font-family:arial;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding-top: 4px;
+  padding-top: 6px;
   padding-left: 15px;
   font-weight: bold;
   &:hover {
@@ -56,10 +55,19 @@ input {
   }
 }
 
-.nav.navbar-nav.navbar-right {
-  padding-right:15px;
+
+#logopic {
+  padding-top: 8px;
 }
 
+.nav.navbar-nav.navbar-right {
+  padding-right:15px;
+  padding-top: 2px;
+}
+
+.page-header{
+  color: black;
+}
 
 /* footer */
 
