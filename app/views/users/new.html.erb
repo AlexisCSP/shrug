@@ -1,12 +1,13 @@
-<h1>Sign up</h1>
-<p>Please create an account to start using the website!.</p>
+<h1><strong>Sign up</strong></h1>
+<p>Please create an account to start using the website!</p>
+<p>  </p>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user, url: signup_path) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Display Name" %>
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :email %>
@@ -23,4 +24,4 @@
   </div>
 </div>
 
-<p>Find me in app/views/users/new.html.erb</p>
+
