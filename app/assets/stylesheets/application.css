@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+h1{
+	color: black;
+}
+
+h2,h3,h4,h5,h6 {
+	color: black;
+}
+
+.navbar.navbar-fixed-top.navbar-inverse {
+	background: #870B0B;
+}
+
+
+.container {
+	background: lightgrey;
+}
+
+.shrugimage{
+	height: 100px;
+	width: 50px;
+}
