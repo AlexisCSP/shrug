@@ -1,0 +1,17 @@
+<p>
+	<div class="center jumbotron">
+		<p> Logged in! </p>
+		<div class="btn-group">
+			<%= link_to "Create chat!", new_chatroom_path, class: "btn btn-lg btn-primary" %>
+		</div>
+	</div>
+
+	<ul>
+  	<%= render @chat_rooms %>
+	</ul>
+
+</p>
+
+
+
+

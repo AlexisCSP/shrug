@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
   private
     def user_authenticated
       if logged_in?
-        return redirect_to homepostlogin_path
+        return redirect_to index_path
       end
     end
 

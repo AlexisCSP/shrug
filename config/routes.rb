@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/new_chatroom', to: 'chat_rooms#new'
+  post '/new_chatroom',  to: 'chat_rooms#create'
+  get '/index', to: 'chat_rooms#index'
   resources :users
+  resources :chat_rooms, only: [:new, :create, :show, :index]
 end
