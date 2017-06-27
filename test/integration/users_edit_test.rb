@@ -28,8 +28,8 @@ test "successful edit and redirect to edit user page" do
     email = "foo@bar.com"
     patch user_path(@user), params: { user: { name:  name,
                                               email: email,
-                                              password:              "hi",
-                                              password_confirmation: "hi" } }
+                                              password:              "123456",
+                                              password_confirmation: "123456" } }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload
