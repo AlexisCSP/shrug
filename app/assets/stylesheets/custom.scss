@@ -153,3 +153,11 @@ footer {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
+  }
+}

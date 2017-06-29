@@ -3,6 +3,6 @@ class ChatRoom < ApplicationRecord
   belongs_to :user
   has_many :messages, dependent: :destroy
 	has_many :users, through: :messages
-  validates :title, length: { maximum: 50 } , presence: true, uniqueness: true, case_sensitive: false
+  validates :title, length: { minimum: 2, maximum: 50 } , presence: true, uniqueness: true, case_sensitive: false
   validates :description, presence: true, length: { minimum: 2, maximum: 255 }
 end
