@@ -5,14 +5,13 @@
     <%= form_for(@chat_room, url: new_chatroom_path) do |f| %>
       <%= render 'shared/error_messages', obj: @chat_room %>
 
-      	<%= f.label :title %>
+      <%= f.label :title %>
     	<%= f.text_field :title, autofocus: true, class: 'form-control' %>
 
-		<%= f.label :description %>
+		  <%= f.label :description %>
     	<%= f.text_area :description, rows: "5", autofocus: true, class: 'form-control' %>
 
-
-      	<%= f.submit "Create Chat Room", class: "btn btn-primary" %>
+      <%= f.submit "Create Chat Room", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

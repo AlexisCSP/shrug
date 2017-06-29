@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/new_chatroom', to: 'chat_rooms#new'
   post '/new_chatroom',  to: 'chat_rooms#create'
-  get '/index', to: 'chat_rooms#index'
   resources :users
   resources :chat_rooms, only: [:new, :create, :show, :index]
 end

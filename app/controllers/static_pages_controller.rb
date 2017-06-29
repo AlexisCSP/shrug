@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
     if !logged_in?
       return redirect_to root_path
     end
+    @chat_rooms = ChatRoom.all
   end
 
   def aboutpage
@@ -20,7 +21,7 @@ class StaticPagesController < ApplicationController
   private
     def user_authenticated
       if logged_in?
-        return redirect_to index_path
+        return redirect_to homepostlogin_path
       end
     end
 
