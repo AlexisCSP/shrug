@@ -1,18 +1,16 @@
-<h1><%= @chat_room.title %></h1>
+<div class="row col-md-8 col-md-offset-2">
+  <h1><%= @chat_room.title %></h1>
 
-<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
-  <%= render @chat_room.messages %>
+<div class="panel panel-default">
+  <% if @chat_room.messages.any? %>
+    <div class="panel-body" id="messages">
+      <%= render partial: 'messages/message', collection: @chat_room.messages%>
+    </div>
+  <%else%>
+    <div class="panel-body hidden" id="messages">
+    </div>
+  <%end%>
 </div>
 
-<hr>
-
-<%= form_for @message, url: '#' do |f| %>
-  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-    <small class="text-muted">From 1 to 1000 characters</small>
-  </div>
-
-  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
-<% end %>
+  <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chat_room}%>
+</div>

@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   get '/new_chatroom', to: 'chat_rooms#new'
   post '/new_chatroom',  to: 'chat_rooms#create'
   resources :users
-  resources :chat_rooms, only: [:new, :create, :show, :index]
+  resources :chat_rooms, param: :id
   resources :messages
 end
