@@ -16,5 +16,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
+//= require chatrooms
 //= require_tree .
 //= require_tree ./channels
