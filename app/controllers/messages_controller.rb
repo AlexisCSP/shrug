@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
         user: message.user.name
       head :ok
     else
-      redirect_to chat_rooms_path
+      # do something
     end
   end
 
