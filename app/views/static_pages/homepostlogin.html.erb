@@ -6,16 +6,14 @@
     <style>
       #map {
         height: 400px;
-        width: 50%;
+        width: 60%;
        }
+
     </style>
   </head>
   <body>
-  	<div class="center jumbotron">
 
-	<p> Logged in! </p>
-    <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
+    <div id="map">
     <script>
     	 var map, infoWindow;
       function initMap() {
@@ -43,6 +41,8 @@
     		title:"You are here!"
 			});
     	    marker.setMap(map);
+    	    map.setZoom(16);
+			map.panTo(pos);
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -64,10 +64,15 @@
      
 
     </script>
+    </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
     </script>
+	<div class="btn">
+		<%= link_to "Create a room!", "#", class: "btn btn-lg btn-primary" %>
+	</div>
+
+
   </body>
 
-</div>
 </html>
