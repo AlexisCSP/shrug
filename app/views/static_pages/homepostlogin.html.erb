@@ -13,6 +13,7 @@
   </head>
   <body>
 
+
     <div id="map">
     <script>
     	 var map, infoWindow;
@@ -42,7 +43,7 @@
 			});
     	    marker.setMap(map);
     	    map.setZoom(16);
-			map.panTo(pos);
+			    map.panTo(pos);
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -107,13 +108,18 @@
 		    <span class="close">&times;</span> <br>
 		    
 				<form action="#">
-				  	<strong>Room name: </strong>
-					<input type="text" name="roomname" size="25" required> <br>
-					<strong> Room Type:</strong> <br>
-					Public Room <input type="radio" name="roomtype" value ="public" checked> 
-					Friends Only <input type="radio" name="roomtype" value ="private"> 
+				  <strong>Room name: </strong>
+					<input type="text" name="roomname" size="25" required> 
 
-				 	
+          <strong>Room description: </strong>
+          <input type="text" name="roomdescription" size="125" required> 
+
+					<strong> Room Type:</strong> <br>
+          <p>
+					<input type="radio" id ="rbuttons" name="roomtype" value ="public" checked > Public Room <br>
+					<input type="radio" id ="rbuttons" name="roomtype" value ="private"> Friends Only   <br>
+          
+				 	</p>
 				 	<input id="Btnsub" type="submit" value="Create your room!">
 				</form> 
 
@@ -123,6 +129,7 @@
 
 
 <script>
+
 // Get the modal
 var modal = document.getElementById('Modal');
 
@@ -151,7 +158,7 @@ window.onclick = function(event) {
 </script>
 
 
+</body>
 
-  </body>
 
 </html>
