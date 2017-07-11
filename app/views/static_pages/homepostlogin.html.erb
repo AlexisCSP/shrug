@@ -97,31 +97,30 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
     </script>
 	
-<!-- Trigger/Open The Modal -->
+<!--Open The Modal -->
 <button  id="Btn">Create a room!</button>
 
 <!-- The Modal -->
-<div id="Modal" class="modal">
+	<div id="Modal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    
-		<form action="#">
-		  	<strong>Room name: </strong>
-			<input type="text" name="roomname" size="25" required> <br>
-			<strong> Room Type:</strong> <br>
-			Public Room <input type="radio" name="roomtype" value ="public" checked> 
-			Friends Only <input type="radio" name="roomtype" value ="private"> 
+		<div class="modal-content">
+		    <span class="close">&times;</span> <br>
+		    
+				<form action="#">
+				  	<strong>Room name: </strong>
+					<input type="text" name="roomname" size="25" required> <br>
+					<strong> Room Type:</strong> <br>
+					Public Room <input type="radio" name="roomtype" value ="public" checked> 
+					Friends Only <input type="radio" name="roomtype" value ="private"> 
 
-		 	
-		 	<input id="Btnsub" type="submit" value="Submit">
-		</form> 
+				 	
+				 	<input id="Btnsub" type="submit" value="Create your room!">
+				</form> 
 
-    
-  </div>
+		</div>
 
-</div>
+	</div>
+
 
 <script>
 // Get the modal
