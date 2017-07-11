@@ -1421,6 +1421,7 @@ h2,h3,h4,h5,h6 {
 	width: 50px;
 }
 
+<<<<<<< HEAD
 .login_color{
 	color: black;
 }
@@ -1428,3 +1429,65 @@ h2,h3,h4,h5,h6 {
 
 
 
+=======
+/* the botton for room creation */
+#Btn{
+	margin-left: 260px;
+	margin-top: 15px;
+    background-color: #870B0B;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#Btnsub {
+	background-color: #870B0B;
+    border: none;
+    color: white;
+    padding:5px;
+}
+
+
+/* popup modal designs*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    height: 100%; 
+ }
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+>>>>>>> popup room adding-design still working on
