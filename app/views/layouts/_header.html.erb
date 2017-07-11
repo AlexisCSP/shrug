@@ -11,15 +11,16 @@
   <header>
   
 <div class="top">
-      <p class="logo">
+
+      <a class="logo" href=home>
         <span class="icon-coffee"></span>
-        <span class="coffee">ShruG</span>
-      </p>
+        <span class="coffee">Shrug</span>
+      </a>
 
       <nav class="top-nav">
         <ul class="top-ul">
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About Us", helppage_path %></li>
+          <li><%= link_to "About Us", aboutpage_path %></li>
         <li><%= link_to "Contact Us", helppage_path %></li>
         
         <% if logged_in? %>
