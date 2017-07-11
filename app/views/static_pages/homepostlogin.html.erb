@@ -61,16 +61,96 @@
         infoWindow.open(map);
       }
 
-     
+      function saveData() {
+        var name = escape(document.getElementById('name').value);
+        var address = escape(document.getElementById('address').value);
+        var type = document.getElementById('type').value;
+        var latlng = marker.getPosition();
+        var url = 'phpsqlinfo_addrow.php?name=' + name + '&address=' + address +
+                  '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+
+        downloadUrl(url, function(data, responseCode) {
+
+          if (responseCode == 200 && data.length <= 1) {
+            infowindow.close();
+            messagewindow.open(map, marker);
+          }
+        });
+      }
+
+      function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request.responseText, request.status);
+          }
+        };
+    }
 
     </script>
     </div>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
     </script>
-	<div class="btn">
-		<%= link_to "Create a room!", "#", class: "btn btn-lg btn-primary" %>
-	</div>
+	
+<!-- Trigger/Open The Modal -->
+<button  id="Btn">Create a room!</button>
+
+<!-- The Modal -->
+<div id="Modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+		<form action="#">
+		  	<strong>Room name: </strong>
+			<input type="text" name="roomname" size="25" required> <br>
+			<strong> Room Type:</strong> <br>
+			Public Room <input type="radio" name="roomtype" value ="public" checked> 
+			Friends Only <input type="radio" name="roomtype" value ="private"> 
+
+		 	
+		 	<input id="Btnsub" type="submit" value="Submit">
+		</form> 
+
+    
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('Modal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("Btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 
 
   </body>
