@@ -112,7 +112,7 @@ li{
 ul{
 	padding: 0;
 }
-.logo{
+#logo{
 	flex: 1%;
 	font-size: 40px;
 	padding: 8px;
@@ -122,6 +122,7 @@ ul{
 .top-nav{
 	flex: 3%;
 	font-size: 20px;
+	margin-top:5px;
 }
 
 .top-ul{
@@ -1003,6 +1004,7 @@ h2,h3,h4,h5,h6 {
 
 #map{
 	margin-left: 50px;
+	margin-top: 50px;
 	float:left;
 	margin-right:50px;
 
@@ -1013,4 +1015,33 @@ h2,h3,h4,h5,h6 {
  	margin-left: 5px;
  	margin-right:5px;
  }
+
+div.tab {
+	float:left;
+	overflow: hidden;
+	background-color: black;
+	margin-top: 50px;
+	height:400px;
+
+}
+
+div.tab button {
+	border-radius: 0px;
+	background-color: #979797;
+	padding: 10px 10px;
+	outline:none;
+	width: 200px;
+
+}
+
+div.tab button.active {
+	background-color: black;
+	outline:none;
+}
+div.tabcontent {
+	color: white;
+	padding: 10px 10px;
+}
+
+
 

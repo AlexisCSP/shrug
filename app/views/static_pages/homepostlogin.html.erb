@@ -84,10 +84,40 @@
 
 
 <!--chatroom box -->
-  <div>
-	<%=render @chat_rooms%>
+  <div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'NearbyChatRooms')" id= "startopen"><strong>Nearby Chat Rooms</strong></button>
+  <button class="tablinks" onclick="opentab(event, 'NearbyPeople')"><strong>Nearby People</strong></button>
+  
 
+  <div id= "NearbyChatRooms" class="tabcontent">
+	<%=render @chat_rooms%>
   </div>
+
+  <div id= "NearbyPeople" class= "tabcontent">
+  people
+  </div>
+
+</div>
+
+
+<script>
+document.getElementById("startopen").click();
+
+ function opentab(event, type){
+   var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(type).style.display = "block";
+    event.currentTarget.className += " active";
+}
+
+</script>
 
 <!-- The Modal -->
 <button  id="Btn">Create a room!</button>
