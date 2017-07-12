@@ -20,7 +20,6 @@
 
 //= require_tree ./channels
 
-
 var slideIndex = 0;
 showSlides();
 
