@@ -1,12 +1,129 @@
-<p>
-<div class="center jumbotron">
- <p> <h1>Welcome to Shrug</h1> </p>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="btn-group">
+<body>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-	<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+<div class="slideshow-container">
+		<div class="slider-box">
+			<div class="slider">
+				<div class="mySlides">
+									
+   				 <%= link_to image_tag("2.jpg", :alt => " "), root_path %>
+   				 </div>
+   				 <div class="mySlides">
+
+   				 <%= link_to image_tag("5.jpg", :alt => " "), root_path %>
+   				 </div>
+   				 <div class="mySlides">
+   				 <%= link_to image_tag("4.jpg", :alt => " "), root_path %>
+   				 </div>
+   				 <div class="mySlides">
+
+   				 <%= link_to image_tag("5.jpg", :alt => " "), root_path %>
+   				 </div>
+   				 <div class="mySlides">
+
+   				 <%= link_to image_tag("2.jpg", :alt => " "), root_path %>
+   				 </div>
+   				 <div class="mySlides">
+   				 <%= link_to image_tag("4.jpg", :alt => " "), root_path %>
+   				 </div>
+   
+			
+				</div>
+
+			
+		</div>
+
+		<div style="text-align:center">
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+			<span class="dot"></span>
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+		</div>
+
 </div>
 
-</div>
-</p>
+<div  id="flag" class="second-nav">
+		
+	</div>
+ 
+ <p>
+ <div class="welcome">
+		<div class="welcome-content">
+			<h1 class="welcome-p"><b>
+				Welcome to Shrug
+			</b></h1>
+			<br>
+			
+
+			
+			<div class="btn-group">
+
+				<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+				<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+			</div>
+		
+			<br>
+
+			Connect with the people around you!...<br>
+			<p style="text-indent: 150px"> Make new friends!... 
+			</p> 
+			
+			<p style="text-indent: 250px">Let the party BEGINNNN!....
+			</p>
+
+			</p>
+				
+			</div>
+
+			<div class="timings">
+				<h1 class="welcome-p"><span class="icon-time"></span>
+					CONNECT !
+				</h1>
+
+			</div>
+
+			<div class="open1"> <br>
+				<p class="open">
+					¯\_(ツ)_/¯
+				
+				</p>
+				<br>
+			</div>
+
+			
+		</div>
+
+
+		<div class="parallax-coffee">
+			<div class="max-width">
+				<div class="products">
+
+					<div  class="products-back color1">
+						<h2 class="welcome-p">
+							SHRUGS</h2>
+							<p>
+								______________________________
+
+								__________.
+							</p>
+							<a href="products.html#prod-coffee" class="readmore">Read More...</a>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+
+
+	<%= javascript_include_tag('application.js') %>	
+
+	</p>
+	</body>
+	</html>

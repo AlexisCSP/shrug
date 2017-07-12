@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
 
+  mount ActionCable.server => '/cable'
+
+  get 'sessions/new'
   root 'static_pages#home'
   # TODO fix home swap slash
   get '/home', to:'static_pages#homepostlogin', as: 'homepostlogin'
@@ -11,5 +13,9 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/new_chatroom', to: 'chat_rooms#new'
+  post '/new_chatroom',  to: 'chat_rooms#create'
   resources :users
+  resources :chat_rooms, param: :id
+  resources :messages
 end
