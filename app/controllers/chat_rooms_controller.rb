@@ -22,9 +22,14 @@ class ChatRoomsController < ApplicationController
     end
   end
 
+  def title
+    return :title
+  end
   private
 
     def chat_room_params
       params.require(:chat_room).permit(:title, :description)
     end
+
+
 end
