@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :pets
+  get 'sessions/new'
+
   mount ActionCable.server => '/cable'
 
   get 'sessions/new'
