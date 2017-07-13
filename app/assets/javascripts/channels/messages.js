@@ -1,13 +1,12 @@
 App.messages = App.cable.subscriptions.create('MessagesChannel', {
   received: function(data) {
-  	$('textarea#message_body').val(" ")
-  	$('textarea#message_body').focus()
     $("#messages").removeClass('hidden')
     $('#messages').append(this.renderMessage(data))
     $("#messages").stop().animate({ scrollTop: $("#messages")[0].scrollHeight }, 1000);
   },
 
   renderMessage: function(data) {
-    return "<p> <b>" + data.user + ": </b>" + data.message + "</p>";
+    var msg = data.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    return "<p> <b>" + data.user + ": </b>" + msg + "</p>";
   }
 });

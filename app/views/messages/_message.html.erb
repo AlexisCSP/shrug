@@ -4,7 +4,7 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted"><b><%= message.user.name %></b> at <%= message.timestamp %> said:</span><br>
-          <%= message.body %>
+          <%= simple_format message.body %>
         </p>
       </div>
     </div>
