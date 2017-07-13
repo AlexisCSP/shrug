@@ -13,19 +13,29 @@
   </head>
   <body>
 
-
     <div id="map">
     <script>
     	 var map, infoWindow;
+
+       var savePosition=function(position){
+         $.ajax({
+           type:'POST',
+           url:'/update_latlng',
+           data: {'latitude': position.lat,
+                  'longitude': position.lng},
+              success:function(){
+                // do nothing here
+            }
+          });
+        }
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 6
         });
 
-
         infoWindow = new google.maps.InfoWindow;
-
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -44,6 +54,8 @@
     	    marker.setMap(map);
     	    map.setZoom(16);
 			    map.panTo(pos);
+
+          savePosition(pos);
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -88,7 +100,7 @@
   <button class="tablinks" onclick="opentab(event, 'NearbyChatRooms')" id= "startopen"><strong>Nearby Chat Rooms</strong></button>
   <button class="tablinks" onclick="opentab(event, 'NearbyPeople')"><strong>Nearby People</strong></button>
 
-  
+
 
   <div id= "NearbyChatRooms" class="tabcontent">
 	<%=render @chat_rooms%>
@@ -125,31 +137,31 @@ document.getElementById("startopen").click();
 <button  id="Btn">Create a room!</button>
 
 	<div id="Modal" class="modal">
-  
+
 		<div class="modal-content">
-    
+
 
 
 
 		    <span class="close">&times;</span> <br>
-		    
+
 				<form action="#">
 				  <strong>Room name: </strong>
-					<input type="text" name="roomname" size="25" required> 
+					<input type="text" name="roomname" size="25" required>
 
           <strong>Room description: </strong>
 
-          <input type="text" name="roomdescription" size="125" required> 
+          <input type="text" name="roomdescription" size="125" required>
 
 
 					<strong> Room Type:</strong> <br>
           <p>
 					<input type="radio" id ="rbuttons" name="roomtype" value ="public" checked > Public Room <br>
 					<input type="radio" id ="rbuttons" name="roomtype" value ="private"> Friends Only   <br>
-          
+
 				 	</p>
 				 	<input id="Btnsub" type="submit" value="Create your room!">
-				</form> 
+				</form>
 
 		</div>
 
@@ -167,7 +179,7 @@ var btn = document.getElementById("Btn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }

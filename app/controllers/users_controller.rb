@@ -45,6 +45,12 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def update_latlng
+    @user = current_user
+    @user.update_attribute(:latitude, params[:latitude])
+    @user.update_attribute(:longitude, params[:longitude])
+  end
+
   private
 
     def user_params
