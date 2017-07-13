@@ -21,8 +21,8 @@
          $.ajax({
            type:'POST',
            url:'/update_latlng',
-           data: {latitude: position.lat,
-                  longitude: position.lng},
+           data: {'latitude': position.lat,
+                  'longitude': position.lng},
               success:function(){
                 // do nothing here
             }

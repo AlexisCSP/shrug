@@ -47,8 +47,8 @@ class UsersController < ApplicationController
 
   def update_latlng
     @user = current_user
-    @user.update_attribute(:latitude, params[:param1])
-    @user.update_attribute(:longitude, params[:param2])
+    @user.update_attribute(:latitude, params[:latitude])
+    @user.update_attribute(:longitude, params[:longitude])
   end
 
   private
