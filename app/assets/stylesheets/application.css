@@ -15,15 +15,13 @@
  */
 
 
-
-@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700|Roboto');
 @font-face {
 	font-family: 'icomoon';
-	src:  url('fonts/icomoon.eot?peflt4');
-	src:  url('fonts/icomoon.eot?peflt4#iefix') format('embedded-opentype'),
-	url('fonts/icomoon.ttf?peflt4') format('truetype'),
-	url('fonts/icomoon.woff?peflt4') format('woff'),
-	url('fonts/icomoon.svg?peflt4#icomoon') format('svg');
+	src:  url('icomoon.eot');
+	src:  url('icomoon.eot#iefix') format('embedded-opentype'),
+	url('icomoon.ttf') format('truetype'),
+	url('icomoon.woff') format('woff'),
+	url('icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -226,7 +224,7 @@ a{
 }
 
 .second-nav li{
-	padding-bottom: 20px;	
+	padding-bottom: 20px;
 }
 
 .second-nav li a{
@@ -624,7 +622,7 @@ article h3:hover{
 /*.sources{
 	display: flex;
 	flex-wrap:wrap;
-	
+
 
 	}*/
 	button{
@@ -790,7 +788,7 @@ article h3:hover{
 		.articles-boxes {
 			display: flex;
 			flex-direction:column;
-		}	
+		}
 		.img-box{
 			width: 100%;
 		}
@@ -805,8 +803,8 @@ article h3:hover{
 
 		.max-width {
 
-			margin-top: 3rem; 
-			margin-bottom: 0rem; 
+			margin-top: 3rem;
+			margin-bottom: 0rem;
 		}
 		.second-nav{
 			display: none;
@@ -906,7 +904,7 @@ article h3:hover{
 	}
 
 
-	
+
 
 }
 
@@ -969,8 +967,8 @@ h2,h3,h4,h5,h6 {
     padding-top: 200px; /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -991,7 +989,7 @@ h2,h3,h4,h5,h6 {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    height: 100%; 
+    height: 100%;
  }
 
 .close:hover,
