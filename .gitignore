@@ -20,17 +20,26 @@
 /spring/*.pid
 # Ignore Idea IDE stuff
 .idea/
+<<<<<<< HEAD
 
+=======
+>>>>>>> Uploading pics
 # General
 *.DS_Store
 .AppleDouble
 .LSOverride
+<<<<<<< HEAD
 
+=======
+>>>>>>> Uploading pics
 # Icon must end with two \r
 Icon
 # Thumbnails
 ._*
+<<<<<<< HEAD
 
+=======
+>>>>>>> Uploading pics
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
@@ -39,12 +48,19 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+<<<<<<< HEAD
 
+=======
+>>>>>>> Uploading pics
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+<<<<<<< HEAD
 
 .apdisk
 
+=======
+.apdisk
+>>>>>>> Uploading pics

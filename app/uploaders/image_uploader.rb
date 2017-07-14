@@ -31,7 +31,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+<<<<<<< HEAD
   # Create different versions of your uploaded files:
+=======
+  #Create different versions of your uploaded files:
+>>>>>>> Uploading pics
   version :thumb do
     process :resize_to_fit => [50, 50]
   end
@@ -39,13 +43,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
+<<<<<<< HEAD
     %w(jpg jpeg gif png)
+=======
+    %w(jpg jpeg)
+>>>>>>> Uploading pics
   end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
+<<<<<<< HEAD
 #def filename
 #   "something.jpg" if original_filename
 #  end
+=======
+  # def filename
+  #   "something.jpg" if original_filename
+  # end
+>>>>>>> Uploading pics
 
 end
