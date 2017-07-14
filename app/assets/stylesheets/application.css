@@ -108,7 +108,7 @@ li{
 	list-style-type: none;
 }
 ul{
-	padding: 0;
+	padding: none;
 }
 #logo{
 	flex: 1%;
@@ -139,6 +139,7 @@ ul{
 .top-nav ul li{
 	transition: all .5s;
 	font-weight: 400;
+	list-style-type: none;
 }
 
 .top-nav ul li:hover{
@@ -240,13 +241,8 @@ a{
 }
 
 .open{
-	width: 250px;
-	height: 250px;
-	border-radius: 50%;
-	font-size: 50px;
-	color: #fff;
-	line-height: 5;
-	background: #8e491a;
+	background: white;
+	border-radius:5px;
 	transition: all .5s;
 	text-align: center;
 	transition: all .50s;
@@ -254,6 +250,7 @@ a{
 
 .open:hover{
 	background: white;
+	border-radius:5px;
 	color:black;
 }
 
@@ -316,7 +313,7 @@ a{
 }
 
 .welcome-button {
-	border: none;
+	border:none;
 	font-size: 15px;
 	padding: 1%;
 	transition: all .5s;
@@ -606,7 +603,7 @@ article h3:hover{
 	background-color: rgba(142, 73, 26, 0.62);
 }
 /*.awards{
-	display: flex;
+		display: flex;
 	flex-direction: column;
 	background-color: rgba(0, 0, 0, 0.8);
 	padding:3rem;
@@ -702,29 +699,29 @@ article h3:hover{
 	}
 
 
-	.prev, .next {
+	.prevhome, .nexthome {
 		cursor: pointer;
 		position:absolute;
-		bottom: 50%;
+		bottom: 45%;
 		width: auto;
 		padding: 16px;
-		color: #200000;
+		color: white;
 		font-weight: bold;
-		font-size: 35px;
+		font-size: 20px;
 		transition: 0.6s ease;
 		border-radius: 0 3px 3px 0;
 	}
 
 	/* Position the "next button" to the right */
-	.next {
-		right: 30px;
-		border-radius: 3px 0 0 3px;
+	.nexthome {
+		right: 0px;
 	}
 
 	/* On hover, add a black background color with a little bit see-through */
-	.prev:hover, .next:hover {
+	.prevhome:hover, .nexthome:hover {
 		background-color: #200000;
 		color:#DDB429;
+		text-decoration:none;
 	}
 
 
@@ -941,62 +938,62 @@ h2,h3,h4,h5,h6 {
 #Btn{
 	margin-left: 225px;
 	margin-top: 15px;
-	background-color: #870B0B;
-	border: none;
-	color: white;
-	width: 35%;
-	padding: 12px 28px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
+    background-color: #870B0B;
+    border: none;
+    color: white;
+    width: 35%;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 #Btnsub {
 	background-color: #870B0B;
-	border: none;
-	color: white;
-	padding:5px;
+    border: none;
+    color: white;
+    padding:5px;
 }
 
 
 /* popup modal designs*/
 .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 200px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-	background-color: #fefefe;
-	margin: auto;
-	padding: 20px;
-	border: 1px solid #888;
-	width: 40%;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
 }
 
 /* The Close Button */
 .close {
-	color: #aaaaaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-	height: 100%;
-}
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    height: 100%;
+ }
 
 .close:hover,
 .close:focus {
-	color: #000;
-	text-decoration: none;
-	cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 
 }
 
@@ -1009,10 +1006,10 @@ h2,h3,h4,h5,h6 {
 }
 
 #rbuttons {
-	width: auto;
-	margin-left: 5px;
-	margin-right:5px;
-}
+ 	width: auto;
+ 	margin-left: 5px;
+ 	margin-right:5px;
+ }
 
 div.tab {
 	float:left;
@@ -1020,12 +1017,14 @@ div.tab {
 	background-color: black;
 	margin-top: 50px;
 	height:400px;
+
+
 }
 
 div.tab button {
 	border-radius: 0px;
 	background-color: #979797;
-	padding: 10px 10px;
+	padding: 10px 10px
 	border: 0px;
 	margin-left: 0px;
 	outline:none;
@@ -1046,4 +1045,8 @@ div.tabcontent {
 	padding: 15px 20px;
 	font-size:18px;
 	font-family:arial;
+}
+
+#userspage{
+	padding: 10px 50px;
 }
