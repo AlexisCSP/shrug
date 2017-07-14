@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pets
   get 'sessions/new'
 
   root 'static_pages#home'
