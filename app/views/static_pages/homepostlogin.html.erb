@@ -24,7 +24,7 @@
            data: {'latitude': position.lat,
                   'longitude': position.lng},
               success:function(){
-                // do nothing here
+               
             }
           });
         }
@@ -37,7 +37,7 @@
 
         infoWindow = new google.maps.InfoWindow;
 
-        // Try HTML5 geolocation.
+        //geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
