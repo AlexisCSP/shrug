@@ -82,6 +82,8 @@
 
 
 body{
+	min-height: 100%;
+	width: 100%;
 	padding: 0;
 	margin: 0;
 	font-family: "ariel",sans-serif;
@@ -113,20 +115,21 @@ ul{
 	padding: none;
 }
 #logo{
-	flex: 1%;
 	font-size: 40px;
 	padding: 8px;
 	margin: 0;
+	width:110px;
 }
 
 .top-nav{
-	flex: 3%;
+	
 	font-size: 20px;
 	margin-top:5px;
 }
 
 .top-ul{
 	display: flex;
+	width: 480px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
