@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   post '/new_chatroom',  to: 'chat_rooms#create'
   resources :users
   resources :chat_rooms, param: :id
-  resources :messages
+  resources :messages, only:[:create]
 end
