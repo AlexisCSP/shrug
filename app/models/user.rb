@@ -8,8 +8,9 @@ class User < ApplicationRecord
   									uniqueness: { case_sensitive: false }
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_secure_password
-  has_many :chat_rooms
-  has_many :messages, dependent: :destroy
+  has_many :messages
+  has_many :subscriptions
+  has_many :chat_rooms, through: :subscriptions
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -38,4 +39,12 @@ class User < ApplicationRecord
 	def forget
 		update_attribute(:remember_digest, nil)
 	end
+
+  def chat_room_users
+    existing_chat_room_users = []
+    self.chat_rooms.each do |chat|
+      existing_chat_room_users.concat(chat.subscriptions.where.not(user_id: self.id).map {|subscription| subscription.user})
+    end
+    existing_chat_room_users.uniq
+  end
 end
