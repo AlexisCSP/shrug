@@ -12,6 +12,10 @@ function createMessageChannel() {
       var msg = data.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
       return "<p> <b>" + data.user + ": </b>" + msg + "</p>";
     },
+    disconnected: function() {
+      App.cable.subscriptions.remove(this)
+      this.perform('unsubscribed')
+    },
   });
 
   return App.messages;
