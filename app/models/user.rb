@@ -33,9 +33,10 @@ class User < ApplicationRecord
 	end
 
 	# Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
-		return false if self.remember_digest.nil?
-    BCrypt::Password.new(self.remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
 	def forget
@@ -48,6 +49,14 @@ class User < ApplicationRecord
       existing_chat_room_users.concat(chat.subscriptions.where.not(user_id: self.id).map {|subscription| subscription.user})
     end
     existing_chat_room_users.uniq
+  end
+
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   private
