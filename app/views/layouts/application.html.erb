@@ -15,6 +15,11 @@
   <body>
     <%= render 'layouts/header' %>
     <div>
+      <p>
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name %>
+        <% end -%>
+      </p>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
