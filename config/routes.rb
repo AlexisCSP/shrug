@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :users
   resources :chat_rooms, param: :id
   resources :messages, only:[:create]
+  resources :account_activations, only: [:edit]
 end
