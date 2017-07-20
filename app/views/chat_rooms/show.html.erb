@@ -1,6 +1,8 @@
 <div class="row col-md-8 col-md-offset-2">
   <h1><%= @chat_room.title %></h1>
 
+<%= render partial: 'subscriptions/subscription', collection: User.where(id: @chat_room.subscriptions.select(:user_id)), as: :user %>
+
 <div class="panel panel-default">
   <% if @chat_room.messages.any? %>
     <div class="panel-body" id="messages">
