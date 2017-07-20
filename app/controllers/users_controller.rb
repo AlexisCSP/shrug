@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
 		@user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
 
   def new
@@ -47,9 +48,7 @@ class UsersController < ApplicationController
   end
 
   def update_latlng
-    @user = current_user
-    @user.update_attribute(:latitude, params[:latitude])
-    @user.update_attribute(:longitude, params[:longitude])
+    current_user.update_coord(params[:latitude], params[:longitude])
   end
 
   private

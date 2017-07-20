@@ -59,6 +59,10 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def update_coord(lat, long)
+    update_columns(latitude: lat, longitude: long)
+  end
+
   private
 
     # Creates and assigns the activation token and digest.
