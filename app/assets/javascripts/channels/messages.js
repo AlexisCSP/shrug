@@ -10,7 +10,11 @@ function createMessageChannel() {
     },
     renderMessage: function(data) {
       var msg = data.message.replace(/(?:\r\n|\r|\n)/g, '<br />');
-      return "<p> <b>" + data.user + ": </b>" + msg + "</p>";
+      var close = ": </b>";
+      if (data.user == "") {
+        close = " </b>";
+      }
+      return "<p> <b>" + data.user + close + msg + "</p>";
     },
     disconnected: function() {
       App.cable.subscriptions.remove(this)
