@@ -152,6 +152,9 @@ document.getElementById("startopen").click();
         		  <%= f.label :description %>
             	<%= f.text_area :description, rows: "5", autofocus: true, class: 'form-control' %>
 
+              <%= f.hidden_field :latitude, value: current_user.latitude %>
+              <%= f.hidden_field :longitude, value: current_user.longitude %>
+
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.submit "Create Chat Room", class: "btn btn-primary" %>
             <% end %>
