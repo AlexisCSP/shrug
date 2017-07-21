@@ -24,7 +24,7 @@
            data: {'latitude': position.lat,
                   'longitude': position.lng},
               success:function(){
-               
+
             }
           });
         }
@@ -139,29 +139,24 @@ document.getElementById("startopen").click();
 	<div id="Modal" class="modal">
 
 		<div class="modal-content">
-
-
-
-
 		    <span class="close">&times;</span> <br>
 
-				<form action="#">
-				  <strong>Room name: </strong>
-					<input type="text" name="roomname" size="25" required>
 
-          <strong>Room description: </strong>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_for(ChatRoom.new, url: new_chatroom_path) do |f| %>
 
-          <input type="text" name="roomdescription" size="125" required>
+              <%= f.label :title %>
+            	<%= f.text_field :title, autofocus: true, class: 'form-control' %>
 
+        		  <%= f.label :description %>
+            	<%= f.text_area :description, rows: "5", autofocus: true, class: 'form-control' %>
 
-					<strong> Room Type:</strong> <br>
-          <p>
-					<input type="radio" id ="rbuttons" name="roomtype" value ="public" checked > Public Room <br>
-					<input type="radio" id ="rbuttons" name="roomtype" value ="private"> Friends Only   <br>
+              <%= f.submit "Create Chat Room", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
 
-				 	</p>
-				 	<input id="Btnsub" type="submit" value="Create your room!">
-				</form>
 
 		</div>
 
