@@ -45,13 +45,31 @@
 
             var locations = <%= raw @chat_rooms_information.to_json %>
 
+            // Origins, anchor positions and coordinates of the marker increase in the X
+            // direction to the right and in the Y direction down.
+            var image = {
+              url: "<%= asset_path('chat-icon.png') %>",
+              // The origin for this image is (0, 0).
+              origin: new google.maps.Point(0, 0)
+            };
+
+            var shape = {
+              coords: [1, 1, 1, 30, 30, 30, 30, 5, 5, 5, 1, 1],
+              type: 'poly'
+            };
+
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
               var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
               marker = new google.maps.Marker({
-              position: p, title: locations[i][0], map:map });
+              position: p,
+              icon: image,
+              shape: shape,
+              title: locations[i][0],
+              map: map
+            });
               //TODO change this fugly marker - I put it here for testing
-              marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+              //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
             }
 
           // set geolocation pin
@@ -62,7 +80,10 @@
 
             map.setCenter(pos);
 
-            var marker = new google.maps.Marker({position: pos,title:"You are here!" });
+            var marker = new google.maps.Marker({
+              position: pos,
+              title:"You are here!"
+            });
 
             //radius around user's location
             var circle = new google.maps.Circle({ radius: 1000, map:map, fillColor: '#38891b', fillOpacity: 0.4, strokeColor: '#5e5e5e', strokeWeight: 1});
