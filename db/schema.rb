@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20170720231650) do
   create_table "subscriptions", force: :cascade do |t|
     t.integer "chat_room_id"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170720231650) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
