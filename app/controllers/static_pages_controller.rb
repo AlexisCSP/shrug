@@ -11,6 +11,7 @@ class StaticPagesController < ApplicationController
     end
     @chat_room = ChatRoom.new
     @chat_rooms = ChatRoom.all
+    @chat_rooms_information = ChatRoom.pluck(:title, :latitude, :longitude)
   end
 
   def aboutpage

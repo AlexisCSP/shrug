@@ -40,19 +40,18 @@
         //geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            
+
             // obtain locations of chatrooms longitude-latitude organized
-            var locations = [
-            ['chatroom1', 49.343085, -123.305938],
-            ['chatroom2', 49.329925, -123.264994],
-            ['Shrug', 49.277, -122.914]
-            ];
-            
+
+            var locations = <%= raw @chat_rooms_information.to_json %>
+
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
               var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
               marker = new google.maps.Marker({
               position: p, title: locations[i][0], map:map });
+              //TODO change this fugly marker - I put it here for testing
+              marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
             }
 
           // set geolocation pin
@@ -69,7 +68,7 @@
             var circle = new google.maps.Circle({ radius: 1000, map:map, fillColor: '#38891b', fillOpacity: 0.4, strokeColor: '#5e5e5e', strokeWeight: 1});
             circle.bindTo('center', marker, 'position');
 
-            //set user location marker, move view to user location, zoom in 
+            //set user location marker, move view to user location, zoom in
       	    marker.setMap(map);
       	    map.setZoom(16);
   			    map.panTo(pos);
@@ -118,18 +117,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
     </script>
 
-
-
-
-
-
-
 <!--chatroom box -->
   <div class="tab">
   <button class="tablinks" onclick="opentab(event, 'NearbyChatRooms')" id= "startopen"><strong>Nearby Chat Rooms</strong></button>
   <button class="tablinks" onclick="opentab(event, 'NearbyPeople')"><strong>Nearby People</strong></button>
-
-
 
   <div id= "NearbyChatRooms" class="tabcontent">
 	<%=render @chat_rooms%>
