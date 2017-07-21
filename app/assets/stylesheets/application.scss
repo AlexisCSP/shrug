@@ -120,9 +120,9 @@ ul{
 }
 
 .top-nav{
-	
+
 	font-size: 20px;
-	margin-top:5px;
+	margin-top: 5px;
 }
 
 .top-ul{
@@ -316,7 +316,7 @@ a{
 }
 
 .welcome-button {
-	border:none;
+	border: none;
 	font-size: 15px;
 	padding: 1%;
 	transition: all .5s;
@@ -390,7 +390,7 @@ a{
 .tagline{
 	font-family: "ariel",sans-serif;
 	font-weight: 400;
-	margin-top:8rem;
+	margin-top: 8rem;
 	text-align: center;
 	background-color: rgba(162, 86, 33, 0.62);
 }
@@ -402,8 +402,8 @@ a{
 
 .tagline-two{
 	font-size: 2rem;
-	margin-top:0;
-	padding-bottom:10px;
+	margin-top: 0;
+	padding-bottom: 10px;
 }
 
 
@@ -518,31 +518,31 @@ article h3:hover{
 }
 
 .parallax-coffee {
-	background-image: url(7.jpg);
+	background-image: image-url("7.jpg");
 }
 
 .parallax-articles {
-	background-image: url(images/6.jpg);
+	background-image: image-url("6.jpg");
 }
 
 .parallax-aboutus {
-	background-image: url(images/1.jpg);
+	background-image: image-url("1.jpg");
 }
 .parallax-product {
-	background-image: linear-gradient(gray, rgba(67, 42, 38, 0.35)),url(images/2.jpg);
+	background-image: linear-gradient(gray, rgba(67, 42, 38, 0.35)),image-url("2.jpg");
 }
 .parallax-contactus {
-	background-image: url(images/2.jpg);
+	background-image: image-url("2.jpg");
 }
 .parallax-thanks{
-	background-image: url(images/3.jpg);
+	background-image: image-url("3.jpg");
 }
 
 
 /*===============================================================*/
 
 .aboutus-pic{
-	background-image: url(images/2.jpg);
+	background-image: image-url("2.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -571,7 +571,7 @@ article h3:hover{
 	background-color: rgba(0, 0, 0, 0.8);
 	margin-top: 65px;
 	margin-bottom: 65px;
-	padding:30px;
+	padding: 30px;
 	font-size: 20px;
 }
 
@@ -579,12 +579,12 @@ article h3:hover{
 	display: flex;
 	flex-direction: column;
 	background-color: rgba(0, 0, 0, 0.8);
-	padding:3rem;
+	padding: 3rem;
 	margin-bottom: 3rem;
 }
 .who-img{
-	margin:20px;
-	padding:50px;
+	margin: 20px;
+	padding: 50px;
 }
 .round-images{
 	display:flex;
@@ -594,7 +594,7 @@ article h3:hover{
 }
 .round{
 	border-radius: 50%;
-	border:5px solid #8e491a;
+	border: 5px solid #8e491a;
 }
 .round-img-width{
 	width:30%;
@@ -630,7 +630,7 @@ article h3:hover{
 		padding: 8px;
 		border-radius: 10px;
 		background-color:  #8e491a;
-		color:white;
+		color: white;
 		border: none;
 		font-size: 15px;
 		cursor: pointer;
@@ -1026,7 +1026,7 @@ div.tab {
 div.tab button {
 	border-radius: 0px;
 	background-color: #979797;
-	padding: 10px 10px
+	padding: 10px 10px;
 	border: 0px;
 	margin-left: 0px;
 	outline:none;

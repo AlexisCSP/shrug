@@ -4,9 +4,10 @@ class MessagesController < ApplicationController
     message = Message.new(message_params)
     message.user = current_user
     if message.save
-      ActionCable.server.broadcast 'messages',
+      ActionCable.server.broadcast("messages_#{message_params[:chat_room_id]}",
         message: message.body,
         user: message.user.name
+      )
       head :ok
     else
       # do something
