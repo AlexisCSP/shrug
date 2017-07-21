@@ -24,7 +24,7 @@
            data: {'latitude': position.lat,
                   'longitude': position.lng},
               success:function(){
-               
+
             }
           });
         }
@@ -96,7 +96,7 @@
 
 
 <!--chatroom box -->
-  <div class="tab">
+  <div class="tab" style= "margin-top: -400px; margin-right: 10px;  float: right; position: relative">
   <button class="tablinks" onclick="opentab(event, 'NearbyChatRooms')" id= "startopen"><strong>Nearby Chat Rooms</strong></button>
   <button class="tablinks" onclick="opentab(event, 'NearbyPeople')"><strong>Nearby People</strong></button>
 
@@ -134,7 +134,7 @@ document.getElementById("startopen").click();
 </script>
 
 <!-- The Modal -->
-<button  id="Btn">Create a room!</button>
+<button style= "background-color: black" id="Btn">Create a room!</button>
 
 	<div id="Modal" class="modal">
 
@@ -160,7 +160,7 @@ document.getElementById("startopen").click();
 					<input type="radio" id ="rbuttons" name="roomtype" value ="private"> Friends Only   <br>
 
 				 	</p>
-				 	<input id="Btnsub" type="submit" value="Create your room!">
+				 	<input id="Btnsub" type="submit" style= "background-color: black" value="Create your room!">
 				</form>
 
 		</div>
