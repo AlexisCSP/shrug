@@ -40,17 +40,31 @@
         //geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
+            
+            // obtain locations of chatrooms
+            var locations = [
+            ['chatroom1', 49.343085, -123.305938],
+            ['chatroom2', 49.329925, -123.264994]
+            ];
+            
+            //for each location, put marker at lat and lng
+            for (i = 0; i < locations.length; i++) {
+            var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
+            marker = new google.maps.Marker({
+              position: p, title: locations[i][0] });
+            }
+          // set geolocation pin
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
             map.setCenter(pos);
 
             var marker = new google.maps.Marker({
-    		position: pos,
-    		title:"You are here!"
-			});
+        		position: pos,
+        	  title:"You are here!"
+    			  });
+
     	    marker.setMap(map);
     	    map.setZoom(16);
 			    map.panTo(pos);
@@ -60,8 +74,8 @@
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
-        } else {
-          // Browser doesn't support Geolocation
+
+        } else { //cant get geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
@@ -90,9 +104,19 @@
 
     </script>
     </div>
+
+<!--Drop pins for location-->
+
+
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
     </script>
+
+
+
+
+
 
 
 <!--chatroom box -->
