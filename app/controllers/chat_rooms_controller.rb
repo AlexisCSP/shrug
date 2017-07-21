@@ -22,9 +22,16 @@ class ChatRoomsController < ApplicationController
     end
   end
 
+  def destroy
+    ChatRoom.find(params[:id]).destroy
+    flash[:success] = "Chat room deleted"
+    redirect_to homepostlogin_url
+  end
+
   def title
     return :title
   end
+
   private
 
     def chat_room_params
