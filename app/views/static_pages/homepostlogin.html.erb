@@ -43,37 +43,42 @@
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             
-            // obtain locations of chatrooms
+            // obtain locations of chatrooms longitude-latitude organized
             var locations = [
             ['chatroom1', 49.343085, -123.305938],
-            ['chatroom2', 49.329925, -123.264994]
+            ['chatroom2', 49.329925, -123.264994],
+            ['Shrug', 49.277, -122.914]
             ];
             
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
-            var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
-            marker = new google.maps.Marker({
-              position: p, title: locations[i][0] });
+              var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
+              marker = new google.maps.Marker({
+              position: p, title: locations[i][0], map:map });
             }
+
           // set geolocation pin
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+
             map.setCenter(pos);
 
-            var marker = new google.maps.Marker({
-        		position: pos,
-        	  title:"You are here!"
-    			  });
+            var marker = new google.maps.Marker({position: pos,title:"You are here!" });
 
-    	    marker.setMap(map);
-    	    map.setZoom(16);
-			    map.panTo(pos);
+            //radius around user's location
+            var circle = new google.maps.Circle({ radius: 1000, map:map, fillColor: '#38891b', fillOpacity: 0.4, strokeColor: '#5e5e5e', strokeWeight: 1});
+            circle.bindTo('center', marker, 'position');
 
-          savePosition(pos);
+            //set user location marker, move view to user location, zoom in 
+      	    marker.setMap(map);
+      	    map.setZoom(16);
+  			    map.panTo(pos);
 
-          }, function() {
+            savePosition(pos);
+
+          },function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
 
