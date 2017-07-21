@@ -28,7 +28,11 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    if (typeof slides[slideIndex-1] !== 'undefined') {
+      slides[slideIndex-1].style.display = "block";
+    }
+    if (typeof dots[slideIndex-1] !== 'undefined') {
+          dots[slideIndex-1].className += " active";
+    }
     timer = setTimeout(showSlides, 5000);
 }

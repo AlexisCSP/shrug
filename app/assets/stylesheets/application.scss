@@ -518,31 +518,31 @@ article h3:hover{
 }
 
 .parallax-coffee {
-	background-image: url(7.jpg);
+	background-image: image-url("7.jpg");
 }
 
 .parallax-articles {
-	background-image: url(images/6.jpg);
+	background-image: image-url("6.jpg");
 }
 
 .parallax-aboutus {
-	background-image: url(images/1.jpg);
+	background-image: image-url("1.jpg");
 }
 .parallax-product {
-	background-image: linear-gradient(gray, rgba(67, 42, 38, 0.35)),url(images/2.jpg);
+	background-image: linear-gradient(gray, rgba(67, 42, 38, 0.35)),image-url("2.jpg");
 }
 .parallax-contactus {
-	background-image: url(images/2.jpg);
+	background-image: image-url("2.jpg");
 }
 .parallax-thanks{
-	background-image: url(images/3.jpg);
+	background-image: image-url("3.jpg");
 }
 
 
 /*===============================================================*/
 
 .aboutus-pic{
-	background-image: url(images/2.jpg);
+	background-image: image-url("2.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
