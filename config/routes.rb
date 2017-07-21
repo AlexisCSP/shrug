@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   mount ActionCable.server => '/cable'
 
   get 'sessions/new'
@@ -20,4 +24,5 @@ Rails.application.routes.draw do
   resources :chat_rooms, param: :id
   resources :messages, only:[:create]
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
