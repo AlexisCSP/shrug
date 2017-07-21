@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
     if !logged_in?
       return redirect_to root_path
     end
+    @chat_room = ChatRoom.new
     @chat_rooms = ChatRoom.all
   end
 
