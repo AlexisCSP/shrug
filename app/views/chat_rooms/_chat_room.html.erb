@@ -1,1 +1,7 @@
-<li><%= link_to "Enter #{chat_room.title}", chat_room_path(chat_room) %></li>
+<li>
+  <%= link_to "Enter #{chat_room.title}", chat_room_path(chat_room) %>
+  <% if current_user.admin? %>
+  | <%= link_to "delete", chat_room, method: :delete,
+                                data: { confirm: "Are you sure you want to delete the user?" } %>
+  <% end %>
+</li>
