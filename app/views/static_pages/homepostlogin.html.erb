@@ -59,6 +59,9 @@
               coords: [1, 1, 1, 30, 30, 30, 30, 5, 5, 5, 1, 1],
               type: 'poly'
             };
+            var markers=[];
+
+
 
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
@@ -70,9 +73,13 @@
               title: locations[i][0],
               map: map
             });
+
               //TODO change this fugly marker - I put it here for testing
               //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+              markers.push(marker);
             }
+
+            
 
           // set geolocation pin
             var pos = {
@@ -97,6 +104,9 @@
   			    map.panTo(pos);
 
             savePosition(pos);
+            var markerCluster = new MarkerClusterer(map, markers, {gridSize:40, maxZoom: 18, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+           
+        
 
           },function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -132,9 +142,10 @@
     </script>
     </div>
 
-<!--Drop pins for location-->
+<!--marker options-->
 
-
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt4_0BPK9TgwPMo3mI-dz6v8Mg1MW-8n0&callback=initMap">
