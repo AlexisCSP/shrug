@@ -1,3 +1,155 @@
-<h1>
-<%= @user.name %>, <%= @user.email %>
-</h1>
+<!DOCTYPE html>
+<html>
+<div class="container" style="background-color: black" >
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {background-color: black; font-family: "Open Sans", sans-serif }
+header{ display:none;}
+</style>
+
+<body class="w3-theme-black">
+
+<!-- Navbar -->
+
+<div class="w3-top">
+ <div class="w3-bar w3-black w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-padding-large
+  w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);"
+  onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <%= link_to "Shrug", root_path, id: "logo", style: "float:left" %>
+  <a href="#" class="w3-bar-item w3-button w3-hover-black w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hover-black w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <div class="w3-dropdown-hover w3-hover-black w3-hide-small">
+    <button class="w3-button w3-hover-black w3-padding-large"
+    title="Notifications"><i class="fa fa-bell"></i>
+    <span class="w3-badge w3-right w3-small w3-blue">1</span></button>
+    <div class="w3-dropdown-content w3-hover-black w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-hover-white w3-button">Notifications will appear here. </a>
+    </div>
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/assets/1.jpg" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+ </div>
+</div>
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:8px; background-color: black">
+  <!-- The Grid -->
+  <div class="w3-row" style= "background-color: black">
+    <!-- Left Column -->
+    <div class="w3-col m12" style= "background-color: black">
+      <!-- Profile -->
+      <div class="w3-card-2  w3-round w3-black" style= "background-color: black">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="/assets/1.jpg" class="w3-circle" style="height:340px; width: 340px" alt="Me"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-black w3-text-theme"></i>My information</p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Accordion -->
+      <div class="w3-card-2 w3-round w3-col m7">
+        <div class="w3-black">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-black w3-hover-white w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-black w3-hover-white w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-hover-black w3-container">
+         <div class="w3-row-padding">
+         <br>
+         </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Interests -->
+      <div class="w3-card-2 w3-round w3-black w3-hide-small">
+        <div class="w3-container">
+          <p>Interests</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">News</span>
+
+            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+            <span class="w3-tag w3-small w3-theme-d2">Games</span>
+            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+            <span class="w3-tag w3-small w3-theme">Games</span>
+            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+            <span class="w3-tag w3-small w3-theme-l2">Food</span>
+          </p>
+        </div>
+      </div>
+      <br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Middle Column -->
+
+    <div class="w3-col m12">
+
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card-2 w3-round w3-white">
+
+
+            <div class="w3-container w3-padding-24">
+              <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
+              <button type="button" class="w3-button w3-theme-d5 w3-black w3-hover-black"><i class="fa fa-pencil"></i>  Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Middle Column -->
+    </div>
+
+  </div>
+
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
