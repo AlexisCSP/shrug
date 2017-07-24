@@ -55,8 +55,10 @@
 
 }
 .icon-facebook-with-circle:before {
-	content: "\e902";
-	font-size:2.5rem;
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	background: url("/social/facebook.png"no-repeat);
 }
 .icon-instagram-with-circle:before {
 	content: "\e903";
@@ -414,6 +416,7 @@ a{
 	justify-content: space-between;
 	background-color: black;
 	font-family: "Ariel";
+	text-decoration-color: white;
 }
 
 .footer-div h1{
@@ -514,25 +517,31 @@ article h3:hover{
 	overflow-y: auto;
 }
 
-.parallax-coffee {
-	background-image: url(7.jpg);
+.parallax-p2 {
+	background-image: url(p2.jpg);
 }
 
-.parallax-articles {
-	background-image: url(images/6.jpg);
+.parallax-p4 {
+	background-image: url(p4.jpg);
 }
 
-.parallax-aboutus {
-	background-image: url(images/1.jpg);
+.parallax-p5 {
+	background-image: url(p5.jpg);
 }
 .parallax-product {
 	background-image: linear-gradient(gray, rgba(67, 42, 38, 0.35)),url(images/2.jpg);
 }
-.parallax-contactus {
-	background-image: url(images/2.jpg);
+.parallax-p1 {
+	background-image: url(p1.png);
 }
-.parallax-thanks{
-	background-image: url(images/3.jpg);
+.parallax-p6{
+	background-image: url(p6.jpg);
+}
+.parallax-p3{
+	background-image: url(p3.jpg);
+}
+.parallax-p7{
+	background-image: url(p7.jpg);
 }
 
 
@@ -748,7 +757,7 @@ article h3:hover{
 		}
 		.products {
 			display: flex;
-			flex-direction: column;
+			
 		}
 		.products-back {
 			padding: 3%;
