@@ -62,7 +62,6 @@
             var markers=[];
 
 
-
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
               var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
@@ -79,7 +78,7 @@
               markers.push(marker);
             }
 
-            
+
 
           // set geolocation pin
             var pos = {
@@ -105,8 +104,8 @@
 
             savePosition(pos);
             var markerCluster = new MarkerClusterer(map, markers, {gridSize:40, maxZoom: 18, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-           
-        
+
+
 
           },function() {
             handleLocationError(true, infoWindow, map.getCenter());
