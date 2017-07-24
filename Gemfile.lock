@@ -77,6 +77,7 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.18)
     formatador (0.2.5)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     guard (2.14.1)
@@ -232,6 +233,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   faker
+  geocoder
   guard
   guard-minitest
   jbuilder (~> 2.5)
@@ -254,4 +256,4 @@ DEPENDENCIES
   will_paginate (= 3.1.5)
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

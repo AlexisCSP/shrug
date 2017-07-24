@@ -30,7 +30,7 @@ gem 'bcrypt'
 gem 'faker'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
-
+gem 'geocoder'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'pg'
