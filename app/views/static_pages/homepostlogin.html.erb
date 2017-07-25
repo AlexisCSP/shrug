@@ -19,7 +19,7 @@
     <script>
     	 var map, infoWindow;
 
-       var savePosition=function(position){
+       var savePosition = function(position) {
          $.ajax({
            type:'POST',
            url:'/update_latlng',
@@ -29,6 +29,11 @@
 
             }
           });
+        }
+
+        var openChatRoom = function(id) {
+          var url = "/chat_rooms/" + id;
+          window.location.replace(url);
         }
 
       function initMap() {
@@ -61,23 +66,27 @@
             };
             var markers=[];
 
-
             //for each location, put marker at lat and lng
             for (i = 0; i < locations.length; i++) {
-              var p = new google.maps.LatLng(locations[i][1], locations[i][2]);
+              var p = new google.maps.LatLng(locations[i][2], locations[i][3]);
               marker = new google.maps.Marker({
               position: p,
               icon: image,
               shape: shape,
-              title: locations[i][0],
+              title: locations[i][1],
               map: map
-            });
+              });
 
-              //TODO change this fugly marker - I put it here for testing
-              //marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
+              marker['id'] = locations[i][0];
               markers.push(marker);
             }
 
+            for (i = 0; i < markers.length; i++) {
+              var marker = markers[i]
+              marker.addListener('click', function () {
+                openChatRoom(this.id);
+              });
+            }
 
 
           // set geolocation pin
