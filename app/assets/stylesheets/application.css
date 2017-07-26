@@ -528,7 +528,9 @@ article h3:hover{
 .parallax-p7{
 	background-image: url(p7.jpg);
 }
-
+.parallax-p8{
+	background-image: url(concertpeople.jpg)
+}
 
 /*===============================================================*/
 
@@ -1056,4 +1058,12 @@ div.tabcontent {
 	opacity:0.90;
 	width: 70%;
 	min-width: 200px;
+}
+
+.users {
+	background-color:white;
+	border-radius: 6px;
+	width:auto;
+	float: center;
+	opacity:0.95;
 }
