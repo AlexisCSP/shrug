@@ -8,14 +8,10 @@
 
   <header>
   
-<div class="top">
-
-      <%= image_tag("sample_x204.png") %>
+<div class="top" style=":hovor{color:none , underline:none">
+      <%= image_tag ("sample_x204.png") %>
       <%= link_to "SHRUG", root_path, id: "logo" %>
-      
-       
-      </a>
-
+     
       <nav class="top-nav">
         <ul class="top-ul">
           <li><%= link_to "Home", root_path %></li>
@@ -25,7 +21,7 @@
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
 
-          <li class= "dropdown">
+          <li class= "dropdown" >
             <a href="#" class= "dropdown-toggle" data-toggle="dropdown">
               Account <b class= "caret"></b>
             </a>
