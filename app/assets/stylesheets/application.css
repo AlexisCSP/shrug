@@ -268,10 +268,10 @@ a{
 
 .welcome-content{
 	border-right: 2px dashed white;
-	width: 50%;
+	width: 47%;
 	font-size: 20px;
 	margin-bottom: 0;
-	padding: 3rem 1%;
+	
 }
 .welcome-content p,.products-back p{
 	word-spacing: 4px;
@@ -629,7 +629,7 @@ article h3:hover{
 	}
 	.center{
 
-		max-width: 1100px;
+		max-width: 80%;
 		margin: auto;
 
 	}
@@ -736,7 +736,6 @@ article h3:hover{
 		.welcome-content{
 			width: 100%;
 			border-right: none;
-			padding: 0 1%;
 			padding-bottom: 2rem;
 		}
 		.timings{
