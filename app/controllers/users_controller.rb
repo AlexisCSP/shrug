@@ -34,6 +34,10 @@ class UsersController < ApplicationController
   def update
     @user= User.find(params[:id])
     if @user.update_attributes(user_params)
+      checkBoxValue = (params[:remove_image])
+      if checkBoxValue
+        File.delete(@user.image) if File.exist?(@user.image)
+      end
       flash[:success] = "Profile updated"
       redirect_to @user
     else
@@ -55,7 +59,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :image)
+                                   :password_confirmation, :image, :remove_image)
     end
 
     def logged_in_user
