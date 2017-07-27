@@ -1,5 +1,5 @@
-<div class="chatroomdes">
-<div class="row col-md-8 col-md-offset-2">
+
+<div class="row col-md-6 col-md-offset-3" style ="float:none;">
   <h1><%= @chat_room.title %></h1>
 
 <%= render partial: 'subscriptions/subscription', collection: User.where(id: @chat_room.subscriptions.select(:user_id)), as: :user %>
@@ -25,4 +25,4 @@
   messageForm();
   // app/assets/javascripts/chatrooms.js
 </script>
-</div>
+

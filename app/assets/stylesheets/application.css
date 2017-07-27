@@ -919,10 +919,9 @@ h2,h3,h4,h5,h6 {
 
 /* the botton for room creation */
 #Btn{
-
 	margin-left:15%;
 	margin-top: 15px;
-    background-color: #870B0B;
+    background-color: #204f9b;
     border: none;
     color: white;
     width: 35%;
