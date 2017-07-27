@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20170721030254) do
   create_table "subscriptions", force: :cascade do |t|
     t.integer "chat_room_id"
     t.integer "user_id"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,7 +51,6 @@ ActiveRecord::Schema.define(version: 20170721030254) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin"
-
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
     t.string "activation_digest"
@@ -60,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170721030254) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
