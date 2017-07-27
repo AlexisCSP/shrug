@@ -33,6 +33,10 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
+#user_remove_image{
+  width:5%;
+}
+
 input {
   height: auto !important;
 }
@@ -53,6 +57,13 @@ input {
 
 .btn.btn-lg.btn-primary, .btn.btn-primary{
   background: #204f9b;
+
+}
+.chatbutton.btn-primary{
+  width:50%;
+  border-radius: 5px;
+  margin-left: 25%;
+  padding: 8px 0px;
 }
 
 .page-header{

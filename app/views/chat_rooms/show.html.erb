@@ -1,9 +1,10 @@
-<div class="row col-md-8 col-md-offset-2">
+
+<div class="row col-md-6 col-md-offset-3" style ="float:none;">
   <h1><%= @chat_room.title %></h1>
 
 <%= render partial: 'subscriptions/subscription', collection: User.where(id: @chat_room.subscriptions.select(:user_id)), as: :user %>
 
-<div class="panel panel-default">
+<div class="panel panel-default" >
   <% if @chat_room.messages.any? %>
     <div class="panel-body" id="messages">
       <%= render partial: 'messages/message', collection: @chat_room.messages.last(150)%>
@@ -12,6 +13,7 @@
     <div class="panel-body hidden" id="messages">
     </div>
   <%end%>
+
 </div>
 
   <%= render partial: 'messages/message_form', locals: {message: @message, chat_room: @chat_room}%>
@@ -23,3 +25,4 @@
   messageForm();
   // app/assets/javascripts/chatrooms.js
 </script>
+
