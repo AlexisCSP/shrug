@@ -1,12 +1,158 @@
-<p>
-<div class="center jumbotron">
- <p> <h1>Welcome to Shrug</h1> </p>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="btn-group">
+<body>
 
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-	<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+<div class="slideshow-container">
+	<div class="slider-box">
+		<div class="slider">
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc1.png", :alt => " "), root_path %>
+			</div>
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc4.png", :alt => " "), root_path %>
+			</div>
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc3.png", :alt => " "), root_path %>
+			</div>
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc2.png", :alt => " "), root_path %>
+			</div>
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc3.png", :alt => " "), root_path %>
+			</div>
+
+			<div class="mySlides">
+				<%= link_to image_tag("sc1.png", :alt => " "), root_path %>
+			</div>
+
+			<a class="prevhome" onclick="plusSlides(-1)">&#10094;</a>
+		  <a class="nexthome" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+
+
+	</div>
+
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+		<span class="dot" onclick="currentSlide(4)"></span>
+		<span class="dot" onclick="currentSlide(5)"></span>
+		<span class="dot" onclick="currentSlide(6)"></span>
+	</div>
+
 </div>
 
-</div>
-</p>
+
+	
+
+ <p>
+ <div class="welcome">
+		<div class="center welcome-content" >
+
+			<h1 class="welcome-p"><b>
+				Welcome to Shrug
+			</b></h1>
+			<br>
+			<div class="btn-group">
+
+				<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+				<%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
+				<br>
+			</div>
+
+			<br>
+
+			</div>
+
+			<div class="center timings">
+				<h1 class="welcome-p" >
+					<p>
+					
+					Connect with the people around you!<br>
+					</p>
+					Make new friends!
+
+					<br/>
+					¯\_(ツ)_/¯<br/>
+					   <br/>
+					
+				</h1>
+
+			</div>
+
+
+		</div>
+
+
+		
+		<div class="parallax-p2">
+			<div class="max-width">
+			 <div class = "products">
+
+					<div  class="products-back color1">
+						<h2 class="welcome-p"><br/>
+							Chat Rooms </h2>
+							<p style= "color:white;">
+								<br/>
+								<br/>
+								Create Chatrooms with topics of interest..
+							
+							</p>
+							</p>
+							
+
+
+						</div>
+
+						<div class="products-back color2">
+							<h2 class="welcome-p"><br/>Locations
+							</h2>
+							<p style= "color:white;">
+							<br/>
+							<br/>
+								Find new friends at different locations..
+							</p>
+
+
+						</div>
+
+						<div class="products-back color3">
+							<h2 class="welcome-p specials"><span class="icon-checkmark"><br/></span>
+								Connect
+							</h2>
+							<p style= "color:white;">
+							<br/>
+							<br/>
+								Chat and Connect with near-by people..
+							</p>
+							
+
+
+						</div>
+						</div>
+					</div>
+				</div>
+		
+
+
+
+
+	<%= javascript_include_tag('application.js') %>
+
+
+
+	</p>
+	</body>
+	</html>
+
+  <script>
+    startSlides();
+    // app/assets/javascripts/slider.js
+  </script>

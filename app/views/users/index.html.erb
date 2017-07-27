@@ -1,27 +1,22 @@
+<div class="parallax-p8">
+
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
 
-<%= will_paginate %>
+<div id=userspage>
+<h1 style= "color:white;">All users</h1>
 
-<ul class="users">
+<div class="paginate">
+    <%= will_paginate @users, :users => false %>
+   <!--<%= will_paginate @posts, :page_links => false %> -->
+ </div>
+
+<ul class="users" style= "background-color: white;">
   <%= render @users %>
 </ul>
 
-<%= will_paginate %>
+<div class="paginate">
+   <%= will_paginate @users, :users => false %>
+ </div>
 
-<tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.image %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-</tbody>
-
-
-<br>
-
-<%= link_to 'New user', new_user_path %>
+</div>
+</div>

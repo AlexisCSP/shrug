@@ -4,6 +4,7 @@ module SessionsHelper
   def log_in(user)
     remember user
     session[:user_id] = user.id
+    cookies.signed[:actioncable_user_id] = user.id
   end
 
   # hashes the user id and saves it to a permanent cookie along with the remember_token
@@ -38,7 +39,7 @@ module SessionsHelper
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in user
         @current_user = user
       end
@@ -60,5 +61,5 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
-  
+
 end

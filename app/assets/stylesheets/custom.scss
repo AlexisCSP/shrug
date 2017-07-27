@@ -8,7 +8,7 @@ $gray-medium-light: #870B0B;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
   font-family: arial;
 }
 
@@ -28,7 +28,7 @@ textarea {
 }
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
 }
@@ -39,21 +39,7 @@ input {
 
 /* header */
 
-#logo {
-  float: left;
-  font-size: 2.2em;
-  font-family:arial;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-top: 7px;
-  padding-left: 15px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
+
 
 
 #logopic {
@@ -66,7 +52,7 @@ input {
 }
 
 .btn.btn-lg.btn-primary, .btn.btn-primary{
-  background: #870B0B;
+  background: #8e491a;
 }
 
 .page-header{
@@ -151,5 +137,13 @@ footer {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
   }
 }

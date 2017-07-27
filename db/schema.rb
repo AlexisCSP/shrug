@@ -10,12 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714200327) do
+ActiveRecord::Schema.define(version: 20170721030254) do
 
-  create_table "pets", force: :cascade do |t|
-    t.string "name"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "title"
     t.text "description"
-    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "chat_room_id"
+    t.integer "user_id"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,8 +52,18 @@ ActiveRecord::Schema.define(version: 20170714200327) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin"
-    t.string "image"
+
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "chat_rooms", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
 end
