@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20170727211934) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.integer "chat_room_id"
     t.integer "user_id"
@@ -50,15 +58,15 @@ ActiveRecord::Schema.define(version: 20170727211934) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
-    t.string "image", default: "default.jpg"
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "image", default: "default.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
