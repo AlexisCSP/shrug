@@ -69,7 +69,7 @@
             };
             var markers=[];
 
-            //for each location, put marker at lat and lng
+            //for each location, put marker at lat and lng if its inside the circle
             for (i = 0; i < locations.length; i++) {
               var p = new google.maps.LatLng(locations[i][2], locations[i][3]);
               marker = new google.maps.Marker({
@@ -84,19 +84,22 @@
               markers.push(marker);
             }
 
+            // set geolocation pin
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+
             for (i = 0; i < markers.length; i++) {
-              var marker = markers[i]
-              marker.addListener('click', function () {
-                openChatRoom(this.id);
-              });
+              var marker = markers[i];
+              var isMarkerInsideBound = isDistanceBetweenPointsLessThanBound(marker.getPosition().lat(), marker.getPosition().lng(), pos.lat, pos.lng);
+
+              if (isMarkerInsideBound) {
+                  marker.addListener('click', function () {
+                  openChatRoom(this.id);
+                });
+              }
             }
-
-
-          // set geolocation pin
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
 
             map.setCenter(pos);
 
@@ -116,8 +119,6 @@
 
             savePosition(pos);
             var markerCluster = new MarkerClusterer(map, markers, {gridSize:40, maxZoom: 18, imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-
-
 
           },function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -148,6 +149,30 @@
             callback(request.responseText, request.status);
           }
         };
+    }
+
+    function isDistanceBetweenPointsLessThanBound(lat1, lon1, lat2, lon2) {
+      return (haversineDistance(lat1, lon1, lat2, lon2) < 1);
+    }
+
+    function haversineDistance(lat1, lon1, lat2, lon2) {
+      function toRad(x) {
+        return x * Math.PI / 180;
+      }
+
+      var R = 6371; // km
+
+      var x1 = lat2 - lat1;
+      var dLat = toRad(x1);
+      var x2 = lon2 - lon1;
+      var dLon = toRad(x2)
+      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      var d = R * c;
+
+      return d;
     }
 
     </script>
