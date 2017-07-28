@@ -36,9 +36,9 @@ html,body,h1,h2,h3,h4,h5 {background-color: black; font-family: "Open Sans", san
       <!-- Profile -->
       <div class="w3-card-2  w3-round w3-black" style= "background-color: black">
         <div class="w3-container">
-         <h4 class="w3-center" style="color:white"> My Profile</h4>
+         <h4 class="w3-center" style="color:white"><%= @user.name %></h4>
 
-         <p <img align="center"><img src= "<%= get_img_path %>" class="w3-circle" style="height:340px; width: 340px" alt="Me"></p>
+         <p <img align="center"><img src= "<%= get_img_path(@user) %>" class="w3-circle" style="height:340px; width: 340px" alt="Me"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-black w3-text-theme"></i>My information</p>
         </div>
