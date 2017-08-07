@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def show
 		@user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
 
   def new
@@ -18,8 +19,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-    	redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end
@@ -32,6 +34,10 @@ class UsersController < ApplicationController
   def update
     @user= User.find(params[:id])
     if @user.update_attributes(user_params)
+      checkBoxValue = (params[:remove_image])
+      if checkBoxValue
+        File.delete(@user.image) if File.exist?(@user.image)
+      end
       flash[:success] = "Profile updated"
       redirect_to @user
     else
@@ -45,11 +51,15 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def update_latlng
+    current_user.update_coord(params[:latitude], params[:longitude])
+  end
+
   private
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :image, :remove_image)
     end
 
     def logged_in_user

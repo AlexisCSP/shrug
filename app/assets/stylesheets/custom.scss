@@ -8,7 +8,7 @@ $gray-medium-light: #870B0B;
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 0px;
   font-family: arial;
 }
 
@@ -28,9 +28,13 @@ textarea {
 }
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+}
+
+#user_remove_image{
+  width:5%;
 }
 
 input {
@@ -39,21 +43,7 @@ input {
 
 /* header */
 
-#logo {
-  float: left;
-  font-size: 2.2em;
-  font-family:arial;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-top: 7px;
-  padding-left: 15px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
+
 
 
 #logopic {
@@ -66,7 +56,14 @@ input {
 }
 
 .btn.btn-lg.btn-primary, .btn.btn-primary{
-  background: #870B0B;
+  background: #204f9b;
+
+}
+.chatbutton.btn-primary{
+  width:50%;
+  border-radius: 5px;
+  margin-left: 25%;
+  padding: 8px 0px;
 }
 
 .page-header{
@@ -78,7 +75,7 @@ input {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
+  
   color: $gray-light;
   a {
     color: $gray;
@@ -151,5 +148,13 @@ footer {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
   }
 }
